@@ -5328,12 +5328,18 @@ var randomNamesArray = [{
     }
 ];
 
+var randomInsertChars = ['a', 'e', 'i', 'o', 'u', 'z'];
+
 var randomName = function() {
 
     var randomFirstName = randomNamesArray[randomIntBetween(0, randomNamesArray.length)].firstName;
     var randomLastName = randomNamesArray[randomIntBetween(0, randomNamesArray.length)].lastName;
 
-    return { "firstName": randomFirstName, "lastName": randomLastName };
+    var randomLoc = randomIntBetween(1, randomLastName.length);
+    var randomInsertChar = randomInsertChars[randomIntBetween(0, randomInsertChars.length)];
+    var reallyRandomLastName = randomLastName.slice(0, randomLoc) + randomInsertChar + randomLastName.slice(randomLoc, randomLastName.length);
+    
+    return { "firstName": randomFirstName, "lastName": reallyRandomLastName };
 
 };
 

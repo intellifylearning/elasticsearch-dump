@@ -19,7 +19,7 @@ const EDAPP = {
 const ENV_ID_FIELD = 'envId';
 const ACCOUNT_ID_FIELD = 'accountId';
 const SENSOR_ID_FIELD = 'sensorId';
-const API_KEY_FIELD = 'API_KEY_FIELD';
+const API_KEY_FIELD = 'apiKey';
 const ENV_ID = 'prod';
 const ACCOUNT_ID = 'lambda';
 const SENSOR_ID = 'lambda-moodle-sensor-demo';
@@ -49,10 +49,10 @@ function anonymizeUserEntity(doc, options) {
     doc.entity.extensions[USER_LAST_NAME_FIELD] = currentMappedNameRecord.lastName;
     doc.entity.extensions[USER_EMAIL_FIELD] = currentMappedNameRecord.firstName.substring(0, 3) + currentMappedNameRecord.lastName + EMAIL_DOMAIN;
     doc.entity.extensions[EDAPP_FIELD] = EDAPP;
-    doc.entity[ACCOUNT_ID_FIELD] = ACCOUNT_ID;
-    doc.entity[ENV_ID_FIELD] = ENV_ID;
-    doc.entity[SENSOR_ID_FIELD] = SENSOR_ID;
-    doc.entity[API_KEY_FIELD] = API_KEY;
+    doc[ACCOUNT_ID_FIELD] = ACCOUNT_ID;
+    doc[ENV_ID_FIELD] = ENV_ID;
+    doc[SENSOR_ID_FIELD] = SENSOR_ID;
+    doc[API_KEY_FIELD] = API_KEY;
 
     return doc;
 }

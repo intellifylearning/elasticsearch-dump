@@ -1,4 +1,4 @@
-module.exports = [{
+var randomNamesArray = [{
         "firstName": "Aaron",
         "lastName": "Rizzardi"
     },
@@ -5327,3 +5327,22 @@ module.exports = [{
         "lastName": "Orozco"
     }
 ];
+
+var randomName = function() {
+
+    var randomFirstName = randomNamesArray[randomIntBetween(0, randomNamesArray.length)].firstName;
+    var randomLastName = randomNamesArray[randomIntBetween(0, randomNamesArray.length)].lastName;
+
+    return { "firstName": randomFirstName, "lastName": randomLastName };
+
+};
+
+function randomIntBetween(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
+module.exports = {
+    randomName: randomName
+}

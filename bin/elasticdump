@@ -50,9 +50,9 @@ for (var i in defaults) {
 }
 
 // parse whitelisted json formatted options
-jsonParsedOpts.forEach(function(i){
-	if (options[i]) { options[i] = JSON.parse(options[i]) }
-})
+for (var i of jsonParsedOpts) {
+  if (options[i]) { options[i] = JSON.parse(options[i]) }
+}
 
 var log = function (type, message) {
   if (type === 'debug') {

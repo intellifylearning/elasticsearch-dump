@@ -41,13 +41,16 @@ function anonymizeAnyEntity(doc, options) {
     doc.event.data.edApp[EDAPP_ID_FIELD] = EDAPP_ID;
     doc.event.data.actor[USER_NAME_FIELD] = DEFAULT_USER_NAME;
     doc.event.data.edApp[EDAPP_DESCRIPTION_FIELD] = EDAPP_DESCRIPTION;
+    if(doc.event.data.actor.extensions){
     if (doc.event.data.actor.extensions[TOOL_CONSUMER_INSTANCE_NAME_FIELD] ){
     	doc.event.data.actor.extensions[TOOL_CONSUMER_INSTANCE_NAME_FIELD] = TOOL_CONSUMER_INSTANCE_NAME;
 
     } 
+
     if(doc.event.data.actor.extensions[CUSTOM_API_DOMAIN_FIELD]){
     	var curUrl = doc.event.data.actor.extensions[CUSTOM_API_DOMAIN_FIELD];
     	doc.event.data.actor.extensions[CUSTOM_API_DOMAIN_FIELD] = schoolMappings(curUrl);
+    }
 }
 
 

@@ -3,7 +3,7 @@ const schoolMappings = require ('./schoolMappings.js').schoolMappings;
 
 // Fields
 const EMAIL_FIELD = 'EmailAddress';
-const CUSTOM_CANVAS_API_DOMAIN_FIELD = 'event.custom_canvas_api_domain'; 
+const CUSTOM_CANVAS_API_DOMAIN_FIELD = 'custom_canvas_api_domain'; 
 
 
 // Values
